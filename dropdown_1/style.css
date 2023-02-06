@@ -10,7 +10,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 a {
@@ -29,21 +29,44 @@ li {
 }
 
 .menu__list {
-  display: flex;
-  gap: 10px;
-}
-.menu__item {
-  position: relative;
-}
-.menu__link {
-  color: #333;
-}
-
-.sub-menu__list {
-  position: absolute;
-  left: 0;
+  display: inline-block;
+  min-width: 100px;
   background-color: #333;
 }
-.sub-menu__link {
+.menu__item {
+  padding: 6px;
+}
+.menu__item > span {
   color: #fff;
+  cursor: pointer;
+}
+.menu__link {
+  color: #fff;
+}
+
+.parent {
+  position: relative;
+}
+.parent._active {
+  background-color: #444;
+}
+> .parent._active__link {
+  color: grey;
+}
+.parent._active > .submenu {
+  display: block;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+.submenu._active {
+  display: block;
+}
+
+.active-span {
+  background-color: #e24747;
 }/*# sourceMappingURL=style.css.map */
